@@ -22,6 +22,8 @@ describe "user" do
 
     expect(current_path).to eq("/search")
     expect(page).to have_content("17")
-
+    expect(page).to have_content("Denver")
+    expect(page).to have_content("Belmar")
+    expect(page).to have_content("Boulder")
   end
 end
