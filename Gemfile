@@ -14,6 +14,7 @@ gem "less-rails-bootstrap"
 gem "minitest-rails"
 gem 'figaro'
 gem 'active_model_serializers'
+gem 'will_paginate'
 
 
 group :development do
