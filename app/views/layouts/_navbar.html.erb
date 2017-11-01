@@ -10,6 +10,14 @@
   </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
+
+      <li>
+        <%= form_tag("/search", :method => "get") do %>
+        <%= text_field_tag :zipcode, params[:zipcode], placeholder: "Zipcode" %>
+        <%= submit_tag "Search" %>
+      <% end %>
+      </li>
+
       <li>
         <a href="/">Items</a>
       </li>
