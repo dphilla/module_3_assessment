@@ -13,7 +13,6 @@ require 'rails_helper'
 describe "user" do
   scenario "visits root and searches by zip" do
 
-
     visit "/"
 
     fill_in "zipcode", with: '80202'
