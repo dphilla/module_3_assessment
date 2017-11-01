@@ -3,7 +3,7 @@ require 'net/http'
 class BestbuyService
 
   def initialize(zip)
-    @uri =  URI("https://api.bestbuy.com/v1/stores(area(80202,25))?format=json&show=longName,city,distance,phone,storeType&pageSize=17&apiKey=#{ENV["api_key"]}")
+    @uri =  URI("https://api.bestbuy.com/v1/stores(area(#{zip},25))?format=json&show=longName,city,distance,phone,storeType&pageSize=17&apiKey=#{ENV["api_key"]}")
   end
 
 
