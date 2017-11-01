@@ -20,6 +20,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'capybara'
   gem 'rspec-rails'
   gem "pry", :require => "pry"
 end

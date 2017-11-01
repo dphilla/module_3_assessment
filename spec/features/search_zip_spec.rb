@@ -18,12 +18,10 @@ describe "user" do
 
     fill_in "zipcode", with: '80202'
 
-    click_on "search"
+    click_on "Search"
 
     expect(current_path).to eq("/search")
-
-    expect(page).to have_content("")
-
+    expect(page).to have_content("17")
 
   end
 end

@@ -1,5 +1,5 @@
 
-class Api::V1::ItemsController < ApplicationController::API
+class Api::V1::ItemsController < ApplicationController
 
   def index
     render json: Item.all
