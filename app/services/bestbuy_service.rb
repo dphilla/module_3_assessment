@@ -3,18 +3,17 @@ require 'net/http'
 class BestbuyService
 
   def initialize(zip)
-    @uri =  URI("https://api.bestbuy.com/v1/stores(area(80202,25))?format=json&show=storeId,storeType,name&pageSize=17&apiKey=#{ENV["api_key"]}")
+    @uri =  URI("https://api.bestbuy.com/v1/stores(area(80202,25))?format=json&show=longName,city,distance,phone,storeType&pageSize=17&apiKey=#{ENV["api_key"]}")
   end
 
 
   def parsed_json
-
+    get_response["stores"]
   end
 
   def get_response
     resp = Net::HTTP.get(@uri)
-    stuff = JSON.parse(resp, symbolize_headers: true)
-    require 'pry'; binding.pry
+    JSON.parse(resp, symbolize_headers: true)
   end
 
 end

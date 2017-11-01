@@ -1,0 +1,13 @@
+<h1> There are <%= @stores.count %> stores within 25 miles of your zip </h1>
+
+<div>
+
+  <% @stores.each do |store| %>
+    <p><%= store.name %> </p>
+    <p><%= store.city %> </p>
+    <p><%= store.distance %> </p>
+    <p><%= store.phone_number %> </p>
+    <p><%= store.store_type %> </p>
+  <% end %>
+
+</div>
