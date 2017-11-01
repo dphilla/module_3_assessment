@@ -34,7 +34,6 @@ describe "Items API " do
 
     items = JSON.parse(response.body)
 
-    expect(response).to be_success
     expect(items.count).to eq(2)
   end
   it "finds all items" do
@@ -46,7 +45,6 @@ describe "Items API " do
 
     items = JSON.parse(response.body)
 
-    expect(response).to be_success
     expect(items.count).to eq(4)
   end
 end

@@ -1,5 +1,5 @@
 
-class Api::V1::ItemsController < ApplicationController
+class Api::V1::ItemsController < ApplicationController::API
 
   def index
     render json: Item.all
@@ -12,6 +12,7 @@ class Api::V1::ItemsController < ApplicationController
   def create
     item = Item.new(item_params)
     if item.save
+      render json: 'status: 201'
     else
       response = "failed to create Item"
     end
@@ -19,7 +20,9 @@ class Api::V1::ItemsController < ApplicationController
 
   def destroy
     item = Item.find(params[:id])
-    item.destroy
+    if item.destroy
+      render json: 'status: 204'
+    end
   end
 
   private
